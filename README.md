@@ -1,11 +1,11 @@
 # appoker
 A tool for the visualisation and query of application graphs
 
-# Communicating with PuppetDB
-## Listing environments
+## Communicating with PuppetDB
+### Listing environments
 http://localhost:8080/v4/environments
 
-## Example output
+### Example output
 [ {
   "name" : "provision"
 }, {
@@ -14,13 +14,9 @@ http://localhost:8080/v4/environments
   "name" : "production"
 } ]
 
-## Known nodes
+### Known nodes
 http://localhost:8080/v4/nodes
 
-## Resources
+### Resources
 http://localhost:8080/v4/resources
 
-# Method
-1. Render environment graph
-2. For each node in graph, render node
-3. For each node, get resources
