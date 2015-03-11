@@ -1,0 +1,33 @@
+{
+  "nodes": [
+    {
+      "id": "n1",
+      "label": "LB",
+      "x": 0,
+      "y": 0,
+      "size": 3
+    },
+    {
+      "id": "n2",
+      "label": "Web",
+      "size": 3
+    },
+    {
+      "id": "n3",
+      "label": "DB",
+      "size": 3
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "n1",
+      "target": "n2"
+    },
+    {
+      "id": "e1",
+      "source": "n2",
+      "target": "n3"
+    }
+  ]
+}
