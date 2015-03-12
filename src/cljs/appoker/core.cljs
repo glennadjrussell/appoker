@@ -12,7 +12,16 @@
 ;; * Service
 ;;
 
-(ns appoker.core)
+(ns appoker.core
+  (:require [goog.events :as events]
+            [goog.dom :as dom]))
+
+(def graph-element "container")
+
+(defn- listeners
+  []
+  (let [graph-container (dom/getElement graph-element)]
+    (.addMethod (js-obj "sigma.classes.graph"))))
 
 (defn set-html! [el content]
   (set! (.-innerHTML el) content))
