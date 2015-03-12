@@ -7,6 +7,7 @@
   ;; CLJ and CLJS source code paths
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/clojurescript "0.0-2843"]
 
                  ;; Backend dependencies
                  [compojure "1.3.1"]
@@ -19,16 +20,20 @@
   :main appoker.core
 
   ;; lein-cljsbuild plugin to build a CLJS project
-  :plugins [[lein-cljsbuild "1.0.0"]]
+  :plugins [[lein-cljsbuild "1.0.4"]]
 
   ;; cljsbuild options configuration
   :cljsbuild {:builds
               [{;; CLJS source code path
+                :id "appoker"
                 :source-paths ["src/cljs"]
 
                 ;; Google Closure (CLS) options configuration
                 :compiler {;; CLS generated JS script filename
                            :output-to "resources/public/js/appoker.js"
+                           :output-dir "resources/public/js/out"
+                           ;;:source-map true
+                           :asset-path "/static/js/out"
 
                            ;; minimal JS optimization directive
                            optimizations :whitespace
