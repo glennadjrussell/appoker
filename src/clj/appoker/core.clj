@@ -10,8 +10,13 @@
   [req]
   (render (io/resource "index.html") req))
 
+(defn graph
+  [req]
+  (render (io/resource "public/arctic.gexf") req))
+
 (defroutes app
   (GET "/" [] home)
+  (GET "/graph" [] graph)
   (route/resources "/static")
   (route/not-found "<h1>Page not found</h1>"))
 
