@@ -1,0 +1,1704 @@
+[ {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql::server::end", "postgresql", "anchor", "producer:forge:private_forge", "private_forge", "db", "forge::db", "end", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Anchor",
+  "title" : "postgresql::server::end",
+  "line" : 71,
+  "resource" : "d346ac0279b60903ec0540c9420a8efd0049fe77",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "begin", "postgresql::server::service", "postgresql::server", "server", "postgresql::server::service::begin", "class", "postgresql", "anchor", "producer:forge:private_forge", "private_forge", "db", "forge::db", "service", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/service.pp",
+  "type" : "Anchor",
+  "title" : "postgresql::server::service::begin",
+  "line" : 13,
+  "resource" : "fff43040613b826fc58e1859547894ee48410c85",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "postgresql::server::service::end", "class", "postgresql", "anchor", "producer:forge:private_forge", "private_forge", "db", "forge::db", "service", "end", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/service.pp",
+  "type" : "Anchor",
+  "title" : "postgresql::server::service::end",
+  "line" : 45,
+  "resource" : "043af8c47505b47e98422e36f4413fe551c54e2e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "anchor", "producer:forge:private_forge", "start", "postgresql::server::start", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Anchor",
+  "title" : "postgresql::server::start",
+  "line" : 65,
+  "resource" : "0802193df3f28e22736217484e441cd1f3133578",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server::Install]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "concat::setup", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "setup", "concat", "private_forge", "db", "forge::db", "forge" ],
+  "file" : null,
+  "type" : "Class",
+  "title" : "Concat::Setup",
+  "line" : null,
+  "resource" : "20a852eeee774faf8d23f7390dd6726b0e0b7baa",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "validate_service_is_running", "validate_db_connection", "producer:forge:private_forge", "postgresql::validate_db_connection", "private_forge", "db", "forge::db", "service", "client", "postgresql::client", "forge" ],
+  "file" : null,
+  "type" : "Class",
+  "title" : "Postgresql::Client",
+  "line" : null,
+  "resource" : "022b36aa699d24c59f00c71fb2c781d555f246bb",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "file_ensure" : "file",
+    "package_ensure" : "present",
+    "package_name" : "postgresql93"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "class", "postgresql", "producer:forge:private_forge", "globals", "private_forge", "db", "forge::db", "postgresql::globals", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/db.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Globals",
+  "line" : 30,
+  "resource" : "292f3a5ce2c8fb79b709b858d746b30cabd7e7af",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server]" ],
+    "manage_package_repo" : true,
+    "version" : "9.3"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "params", "class", "postgresql", "postgresql::params", "producer:forge:private_forge", "globals", "private_forge", "db", "forge::db", "postgresql::globals", "forge" ],
+  "file" : null,
+  "type" : "Class",
+  "title" : "Postgresql::Params",
+  "line" : null,
+  "resource" : "ad0314ca4301ffc78cc5e568c7e40284792ae0a4",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::repo", "class", "postgresql", "producer:forge:private_forge", "repo", "globals", "private_forge", "db", "forge::db", "postgresql::globals", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/globals.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Repo",
+  "line" : 116,
+  "resource" : "e40399a641b5c11d972c1d2df1e9d427359faf09",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "version" : "9.3"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::repo", "postgresql::repo::yum_postgresql_org", "class", "postgresql", "producer:forge:private_forge", "repo", "globals", "private_forge", "db", "forge::db", "postgresql::globals", "yum_postgresql_org", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/repo.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Repo::Yum_postgresql_org",
+  "line" : 10,
+  "resource" : "f9efa311b031732cf61bc1615abd7e7636983b27",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "producer:forge:private_forge", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/db.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server",
+  "line" : 34,
+  "resource" : "e8bcc592f5c0a41877d150218f1f6b8eec6580e0",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "manage_pg_hba_conf" : true,
+    "service_manage" : true,
+    "service_enable" : true,
+    "group" : "postgres",
+    "ip_mask_deny_postgres_user" : "0.0.0.0/0",
+    "user" : "postgres",
+    "createdb_path" : "/usr/pgsql-9.3/bin/createdb",
+    "ipv6acls" : [ ],
+    "postgresql_conf_path" : "/var/lib/pgsql/9.3/data/postgresql.conf",
+    "default_database" : "postgres",
+    "package_ensure" : "present",
+    "package_name" : "postgresql93-server",
+    "pg_hba_conf_defaults" : true,
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "service_name" : "postgresql-9.3",
+    "plperl_package_name" : "postgresql93-plperl",
+    "datadir" : "/var/lib/pgsql/9.3/data",
+    "manage_pg_ident_conf" : true,
+    "service_ensure" : "running",
+    "port" : 5432,
+    "ipv4acls" : [ ],
+    "client_package_name" : "postgresql93",
+    "needs_initdb" : true,
+    "service_reload" : "service postgresql-9.3 reload",
+    "listen_addresses" : "*",
+    "initdb_path" : "/usr/pgsql-9.3/bin/initdb",
+    "pg_ident_conf_path" : "/var/lib/pgsql/9.3/data/pg_ident.conf",
+    "pg_hba_conf_path" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "ip_mask_allow_all_users" : "127.0.0.1/32"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Config",
+  "line" : 68,
+  "resource" : "a4516d79c75043273307ae25babd7295f900883b",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server::Service]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "postgresql::server::initdb", "producer:forge:private_forge", "initdb", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Initdb",
+  "line" : 67,
+  "resource" : "9c6124a3fec2e8dbf740b402fb858501c641919f",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server::Config]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::install", "postgresql::server", "server", "class", "postgresql", "producer:forge:private_forge", "install", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Install",
+  "line" : 66,
+  "resource" : "b971c7b85624cb109ad4362cddca7fb5c1ab64b7",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server::Initdb]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "passwd", "postgresql", "producer:forge:private_forge", "postgresql::server::passwd", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Passwd",
+  "line" : 70,
+  "resource" : "8d6972ec036e7ee257b473cbfc4f03054fa3f4c3",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Anchor[postgresql::server::end]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "postgresql::server::reload", "producer:forge:private_forge", "reload", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Reload",
+  "line" : 63,
+  "resource" : "0ed03c42657e85ae39e2d37067913600217877a6",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "require" : "Class[Postgresql::Server::Install]"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "producer:forge:private_forge", "private_forge", "db", "forge::db", "service", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server.pp",
+  "type" : "Class",
+  "title" : "Postgresql::Server::Service",
+  "line" : 69,
+  "resource" : "90accbd96070f673b535c4924c4428b46cd2cd66",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Class[Postgresql::Server::Passwd]" ]
+  },
+  "exported" : false
+}, {
+  "tags" : [ "settings", "class" ],
+  "file" : null,
+  "type" : "Class",
+  "title" : "Settings",
+  "line" : null,
+  "resource" : "3fa48ecbd844cdfa4b6e5c5c699dfc8c9b452838",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "class" ],
+  "file" : null,
+  "type" : "Class",
+  "title" : "main",
+  "line" : null,
+  "resource" : "b33414118184f168ff9476785c716b2242329eeb",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "name" : "main"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Concat",
+  "title" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+  "line" : 22,
+  "resource" : "94677ab0c4dfcd5fce53baf9cb85a41afc5cf4c9",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "owner" : "postgres",
+    "backup" : "puppet",
+    "group" : "postgres",
+    "force" : false,
+    "warn" : true,
+    "path" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "ensure" : "present",
+    "mode" : "0640",
+    "replace" : true,
+    "order" : "alpha",
+    "ensure_newline" : false,
+    "notify" : "Class[Postgresql::Server::Reload]"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Concat",
+  "title" : "/var/lib/pgsql/9.3/data/pg_ident.conf",
+  "line" : 130,
+  "resource" : "9775f232b6b7d5b1f2090059ba1258b4ecbd9a55",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "owner" : "postgres",
+    "backup" : "puppet",
+    "group" : "postgres",
+    "force" : true,
+    "warn" : true,
+    "path" : "/var/lib/pgsql/9.3/data/pg_ident.conf",
+    "ensure" : "present",
+    "mode" : "0640",
+    "replace" : true,
+    "order" : "alpha",
+    "ensure_newline" : false,
+    "notify" : "Class[Postgresql::Server::Reload]"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_allow access from forge",
+  "line" : 46,
+  "resource" : "20feea9ff9ecbca56bd2570db510c42e738eadb9",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: allow access from forge\n# Description: Open up postgresql for access\n# Order: 150\nhost\tprivate_forge\tforge\t0.0.0.0/0\tmd5\t\n",
+    "order" : "150",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_allow access to all users",
+  "line" : 46,
+  "resource" : "74700179531bb8a210a5956a547742970f208c9e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: allow access to all users\n# Description: none\n# Order: 100\nhost\tall\tall\t127.0.0.1/32\tmd5\t\n",
+    "order" : "100",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_allow access to ipv6 localhost",
+  "line" : 46,
+  "resource" : "b89a59db8f9b5bd4a08e0f47ed85cb2b44d3323b",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: allow access to ipv6 localhost\n# Description: none\n# Order: 101\nhost\tall\tall\t::1/128\tmd5\t\n",
+    "order" : "101",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_allow localhost TCP access to postgresql user",
+  "line" : 46,
+  "resource" : "08b44f4e07d4f5919f8a7432706111f4ae68e998",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: allow localhost TCP access to postgresql user\n# Description: none\n# Order: 003\nhost\tall\tpostgres\t127.0.0.1/32\tmd5\t\n",
+    "order" : "003",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_deny access to postgresql user",
+  "line" : 46,
+  "resource" : "0842b5bb8f07f34d95fb062e3230ae80ee404d78",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: deny access to postgresql user\n# Description: none\n# Order: 004\nhost\tall\tpostgres\t0.0.0.0/0\treject\t\n",
+    "order" : "004",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_local access as postgres user",
+  "line" : 46,
+  "resource" : "814aa73c3af97060ddf4d1f5e9f170c8b3485e24",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: local access as postgres user\n# Description: none\n# Order: 001\nlocal\tall\tpostgres\t\tident\t\n",
+    "order" : "001",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/pg_hba_rule.pp",
+  "type" : "Concat::Fragment",
+  "title" : "pg_hba_rule_local access to database with same name",
+  "line" : 46,
+  "resource" : "75a8a82407a31fca517f7f18e5b2d558e93aa61f",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "content" : "\n# Rule Name: local access to database with same name\n# Description: none\n# Order: 002\nlocal\tall\tall\t\tident\t\n",
+    "order" : "002",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "exec", "producer:forge:private_forge", "database", "postgresql::server::db", "postgresql::server::database", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/database.pp",
+  "type" : "Exec",
+  "title" : "/usr/pgsql-9.3/bin/createdb --port='5432' --owner='postgres' --template=template0  'private_forge'",
+  "line" : 60,
+  "resource" : "6606a4384ea5ee4b395af6a1b7ec85323ed2ee2e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Postgresql_psql[UPDATE pg_database SET datistemplate = false WHERE datname = 'private_forge']" ],
+    "logoutput" : "on_failure",
+    "notify" : [ "Postgresql_psql[REVOKE CONNECT ON DATABASE \"private_forge\" FROM public]" ],
+    "refreshonly" : true,
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "exec", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "Exec",
+  "title" : "concat_/var/lib/pgsql/9.3/data/pg_hba.conf",
+  "line" : 215,
+  "resource" : "9602f727e72c07a7fb663c01a726331272e3d95f",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf" ],
+    "command" : "/opt/puppetlabs/puppet/cache/concat/bin/concatfragments.sh -o \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat.out\" -d \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf\" -w '# This file is managed by Puppet. DO NOT EDIT.'",
+    "notify" : "File[/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin",
+    "require" : [ "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat]", "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments]", "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf]" ],
+    "subscribe" : "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf]",
+    "unless" : "/opt/puppetlabs/puppet/cache/concat/bin/concatfragments.sh -o \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat.out\" -d \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf\" -w '# This file is managed by Puppet. DO NOT EDIT.' -t"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "exec", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "Exec",
+  "title" : "concat_/var/lib/pgsql/9.3/data/pg_ident.conf",
+  "line" : 215,
+  "resource" : "b6af759d0ba4e5a8789679fc9374bdb860c51965",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf" ],
+    "command" : "/opt/puppetlabs/puppet/cache/concat/bin/concatfragments.sh -o \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat.out\" -d \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf\" -w '# This file is managed by Puppet. DO NOT EDIT.' -f",
+    "notify" : "File[/var/lib/pgsql/9.3/data/pg_ident.conf]",
+    "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin",
+    "require" : [ "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat]", "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments]", "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf]" ],
+    "subscribe" : "File[/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf]",
+    "unless" : "/opt/puppetlabs/puppet/cache/concat/bin/concatfragments.sh -o \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat.out\" -d \"/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf\" -w '# This file is managed by Puppet. DO NOT EDIT.' -f -t"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "postgresql::server::initdb", "exec", "producer:forge:private_forge", "initdb", "private_forge", "db", "postgresql_initdb", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/initdb.pp",
+  "type" : "Exec",
+  "title" : "postgresql_initdb",
+  "line" : 57,
+  "resource" : "0d3a254cb68e221d5283f00059400ba10f1cd0b1",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "/usr/pgsql-9.3/bin/initdb --encoding '' --pgdata '/var/lib/pgsql/9.3/data'",
+    "creates" : "/var/lib/pgsql/9.3/data/PG_VERSION",
+    "group" : "postgres",
+    "logoutput" : "on_failure",
+    "require" : [ "File[/var/lib/pgsql/9.3/data]" ],
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "postgresql_reload", "class", "postgresql", "postgresql::server::reload", "exec", "producer:forge:private_forge", "reload", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/reload.pp",
+  "type" : "Exec",
+  "title" : "postgresql_reload",
+  "line" : 7,
+  "resource" : "928fe5b05725814890919cb4098e09783b9d0d76",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "service postgresql-9.3 reload",
+    "path" : "/usr/bin:/usr/sbin:/bin:/sbin",
+    "refreshonly" : true,
+    "require" : "Class[Postgresql::Server::Service]"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "restart-systemd", "postgresql::server", "config", "server", "class", "postgresql", "exec", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Exec",
+  "title" : "restart-systemd",
+  "line" : 151,
+  "resource" : "0ef705f195677c7960d5c904a6582638b1878524",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "systemctl daemon-reload",
+    "path" : "/bin:/usr/bin:/usr/local/bin",
+    "refreshonly" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "validate_service_is_running", "validate_db_connection", "exec", "producer:forge:private_forge", "postgresql::validate_db_connection", "private_forge", "db", "forge::db", "service", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/validate_db_connection.pp",
+  "type" : "Exec",
+  "title" : "validate postgres connection for /postgres",
+  "line" : 51,
+  "resource" : "b65d629981413edaf8c8a1242b68b41d3a25336c",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "echo 'Unable to connect to defined database using: /usr/pgsql-9.3/bin/psql --tuples-only --quiet -p 5432 --dbname postgres ' && false",
+    "cwd" : "/tmp",
+    "logoutput" : "on_failure",
+    "path" : "/bin:/usr/bin:/usr/local/bin",
+    "require" : "Class[Postgresql::Client]",
+    "timeout" : 180,
+    "unless" : "/usr/local/bin/validate_postgresql_connection.sh 1 60 '/usr/pgsql-9.3/bin/psql --tuples-only --quiet -p 5432 --dbname postgres '",
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::repo", "postgresql::repo::yum_postgresql_org", "class", "postgresql", "producer:forge:private_forge", "repo", "globals", "private_forge", "db", "file", "forge::db", "postgresql::globals", "yum_postgresql_org", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/repo/yum_postgresql_org.pp",
+  "type" : "File",
+  "title" : "/etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-93",
+  "line" : 7,
+  "resource" : "b04244bdae7fac66d813a472c30d316ee3c03b69",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : "Yumrepo[yum.postgresql.org]",
+    "source" : "puppet:///modules/postgresql/RPM-GPG-KEY-PGDG"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "concat::setup", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "setup", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/setup.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat",
+  "line" : 60,
+  "resource" : "915923c557c9bae4f7a25ff601e84fa503c63bc3",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "mode" : "0755"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf",
+  "line" : 154,
+  "resource" : "bc908a464e6478fdd055f5113d5339419720c276",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "mode" : "0750"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments",
+  "line" : 159,
+  "resource" : "0cf9f0c30f4d1fb806a9bf98c8a021abcf07e53d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "force" : true,
+    "ignore" : [ ".svn", ".git", ".gitignore" ],
+    "mode" : "0750",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "purge" : true,
+    "recurse" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat",
+  "line" : 169,
+  "resource" : "baba44195750deebcfaa6d52d26ee97efb32474e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "present",
+    "mode" : "0640"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat.out",
+  "line" : 174,
+  "resource" : "b0548f61d619494e6b250a353323aaf01792501f",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "present",
+    "mode" : "0640"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/001_pg_hba_rule_local access as postgres user",
+  "line" : 113,
+  "resource" : "8bd4ba5b5e1bef433101206fe44be70bd2de6e91",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_local access as postgres user" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: local access as postgres user\n# Description: none\n# Order: 001\nlocal\tall\tpostgres\t\tident\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/002_pg_hba_rule_local access to database with same name",
+  "line" : 113,
+  "resource" : "adf8d287a322b6049533f88891643e702c79d23c",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_local access to database with same name" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: local access to database with same name\n# Description: none\n# Order: 002\nlocal\tall\tall\t\tident\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/003_pg_hba_rule_allow localhost TCP access to postgresql user",
+  "line" : 113,
+  "resource" : "dd2101c6537fbe5e352c8e777aaaa9a08d1ffb75",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_allow localhost TCP access to postgresql user" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: allow localhost TCP access to postgresql user\n# Description: none\n# Order: 003\nhost\tall\tpostgres\t127.0.0.1/32\tmd5\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/004_pg_hba_rule_deny access to postgresql user",
+  "line" : 113,
+  "resource" : "c29d160923ac79d53d75c1037f883478dd3db599",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_deny access to postgresql user" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: deny access to postgresql user\n# Description: none\n# Order: 004\nhost\tall\tpostgres\t0.0.0.0/0\treject\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/100_pg_hba_rule_allow access to all users",
+  "line" : 113,
+  "resource" : "e643e4fe157bd374ea65b680599d5ea6b803a897",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_allow access to all users" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: allow access to all users\n# Description: none\n# Order: 100\nhost\tall\tall\t127.0.0.1/32\tmd5\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "postgresql::server", "config", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/101_pg_hba_rule_allow access to ipv6 localhost",
+  "line" : 113,
+  "resource" : "42a414bb2e8a06a5d564d04f2d47aa80b6d64d1d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_allow access to ipv6 localhost" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: allow access to ipv6 localhost\n# Description: none\n# Order: 101\nhost\tall\tall\t::1/128\tmd5\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "concat::fragment", "server", "class", "postgresql", "fragment", "producer:forge:private_forge", "concat", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/fragment.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments/150_pg_hba_rule_allow access from forge",
+  "line" : 113,
+  "resource" : "cbea844c04778d1e88fc904de0c5ca7fabaefeca",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_fragment_pg_hba_rule_allow access from forge" ],
+    "backup" : false,
+    "content" : "\n# Rule Name: allow access from forge\n# Description: Open up postgresql for access\n# Order: 150\nhost\tprivate_forge\tforge\t0.0.0.0/0\tmd5\t\n",
+    "ensure" : "file",
+    "mode" : "0640",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_hba.conf]",
+    "owner" : "root",
+    "replace" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf",
+  "line" : 154,
+  "resource" : "aff3090606de8b5455dbd446eec94c63e75317af",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "mode" : "0750"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments",
+  "line" : 159,
+  "resource" : "5c73aac81eecc32a8df682d28c34a555e4fbaac7",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "force" : true,
+    "ignore" : [ ".svn", ".git", ".gitignore" ],
+    "mode" : "0750",
+    "notify" : "Exec[concat_/var/lib/pgsql/9.3/data/pg_ident.conf]",
+    "purge" : true,
+    "recurse" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat",
+  "line" : 169,
+  "resource" : "ed5accdbfe1c317093db110530b7117619f840f5",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "present",
+    "mode" : "0640"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat.out",
+  "line" : 174,
+  "resource" : "5c219bae4209bf8c22bb85e7dea0374f7c3e980a",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "present",
+    "mode" : "0640"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "concat::setup", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "setup", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/setup.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/bin",
+  "line" : 60,
+  "resource" : "f795672bc048d0776db5d569c98aa7f7a97c77b2",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "directory",
+    "mode" : "0755"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "concat::setup", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "setup", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/setup.pp",
+  "type" : "File",
+  "title" : "/opt/puppetlabs/puppet/cache/concat/bin/concatfragments.sh",
+  "line" : 53,
+  "resource" : "af8b4c236cb5718e756eaad45a6d446669da60f9",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "backup" : false,
+    "ensure" : "file",
+    "mode" : "0755",
+    "owner" : "root",
+    "source" : "puppet:///modules/concat/concatfragments.sh"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "validate_service_is_running", "validate_db_connection", "producer:forge:private_forge", "postgresql::validate_db_connection", "private_forge", "db", "file", "forge::db", "service", "client", "postgresql::client", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/client.pp",
+  "type" : "File",
+  "title" : "/usr/local/bin/validate_postgresql_connection.sh",
+  "line" : 15,
+  "resource" : "8baa9fda34a75bdf0ce1877de5bec95df57c8a78",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "file",
+    "group" : 0,
+    "mode" : "0755",
+    "owner" : 0,
+    "source" : "puppet:///modules/postgresql/validate_postgresql_connection.sh"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "server", "class", "postgresql", "postgresql::server::initdb", "producer:forge:private_forge", "initdb", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/initdb.pp",
+  "type" : "File",
+  "title" : "/var/lib/pgsql/9.3/data",
+  "line" : 13,
+  "resource" : "428430a1a3d0c278f4aff5068fe16e24a0a158f9",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "directory",
+    "group" : "postgres",
+    "mode" : "0700",
+    "owner" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+  "line" : 179,
+  "resource" : "a1bcc88178e91eaac042a58dea3b43daa747c974",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_/var/lib/pgsql/9.3/data/pg_hba.conf" ],
+    "backup" : "puppet",
+    "ensure" : "present",
+    "group" : "postgres",
+    "mode" : "0640",
+    "owner" : "postgres",
+    "replace" : true,
+    "source" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_hba.conf/fragments.concat.out"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "concat", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/concat/manifests/init.pp",
+  "type" : "File",
+  "title" : "/var/lib/pgsql/9.3/data/pg_ident.conf",
+  "line" : 179,
+  "resource" : "0735081c1c33e4cea42ea4b7eeff808d5b63868e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "concat_/var/lib/pgsql/9.3/data/pg_ident.conf" ],
+    "backup" : "puppet",
+    "ensure" : "present",
+    "group" : "postgres",
+    "mode" : "0640",
+    "owner" : "postgres",
+    "replace" : true,
+    "source" : "/opt/puppetlabs/puppet/cache/concat/_var_lib_pgsql_9.3_data_pg_ident.conf/fragments.concat.out"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "systemd-override", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "file", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "File",
+  "title" : "systemd-override",
+  "line" : 142,
+  "resource" : "1c8a881267650cbd9349cd5437cea0778d315e50",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "/etc/systemd/system/postgresql.service" ],
+    "before" : "Class[Postgresql::Server::Reload]",
+    "content" : ".include /lib/systemd/system/postgresql.service\n[Service]\nEnvironment=PGPORT=5432\nEnvironment=PGDATA=/var/lib/pgsql/9.3/data\n",
+    "ensure" : "present",
+    "group" : "root",
+    "notify" : [ "Class[Postgresql::Server::Service]", "Exec[restart-systemd]" ],
+    "owner" : "root",
+    "path" : "/etc/systemd/system/postgresql.service"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "class", "private_forge", "forge" ],
+  "file" : "/home/vagrant/.puppet/environments/forge/manifests/forge.pp",
+  "type" : "Forge",
+  "title" : "private_forge",
+  "line" : 1,
+  "resource" : "ddb3f3f837f0804e46ce01fc712057f2ddfd992d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db_password" : "never_forget",
+    "db_user" : "forge",
+    "nodes" : {
+      "Node[deployer-agent-1.vm]" : [ "Forge::Db[private_forge]" ],
+      "Node[forge-api.vm]" : [ "Forge::Api[private_forge]" ]
+    }
+  },
+  "exported" : false
+}, {
+  "tags" : [ "class", "producer:forge:private_forge", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/init.pp",
+  "type" : "Forge::Db",
+  "title" : "private_forge",
+  "line" : 5,
+  "resource" : "e03e63a2e04fc99a898006a5dfbaee8459f76bb0",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "host" : "deployer-agent-1.vm",
+    "password" : "never_forget",
+    "user" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "class", "default", "node" ],
+  "file" : null,
+  "type" : "Node",
+  "title" : "default",
+  "line" : null,
+  "resource" : "2a09158b9a8de9f8c0fdd600342bda5a3775752e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : { },
+  "exported" : false
+}, {
+  "tags" : [ "package", "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "validate_service_is_running", "validate_db_connection", "producer:forge:private_forge", "postgresql::validate_db_connection", "private_forge", "db", "postgresql-client", "forge::db", "service", "client", "postgresql::client", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/client.pp",
+  "type" : "Package",
+  "title" : "postgresql-client",
+  "line" : 9,
+  "resource" : "42a286f55581b1331a716a49a65e8adc898d4998",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "present",
+    "name" : "postgresql93",
+    "tag" : "postgresql"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::install", "package", "postgresql::server", "server", "class", "postgresql", "producer:forge:private_forge", "install", "private_forge", "db", "forge::db", "postgresql-server", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/install.pp",
+  "type" : "Package",
+  "title" : "postgresql-server",
+  "line" : 14,
+  "resource" : "c1814cb3d3aabd886e79eb126927db30d083e741",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "present",
+    "name" : "postgresql93-server",
+    "tag" : "postgresql"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "data_directory", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Config_entry",
+  "title" : "data_directory",
+  "line" : 104,
+  "resource" : "6d7d97d9009198adc3308c18b5a72d0c32c8fdd3",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "present",
+    "path" : false,
+    "value" : "/var/lib/pgsql/9.3/data"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "listen_addresses", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Config_entry",
+  "title" : "listen_addresses",
+  "line" : 98,
+  "resource" : "0464dc630e81744f79a20d5fce99ef50df0f4bab",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "present",
+    "path" : false,
+    "value" : "*"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "port", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Config_entry",
+  "title" : "port",
+  "line" : 101,
+  "resource" : "bc0e66f8ed7b0b88e76de68c316897331b6bb2e5",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "ensure" : "present",
+    "path" : false,
+    "value" : 5432
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "database", "postgresql::server::db", "postgresql::server::database", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/db.pp",
+  "type" : "Postgresql::Server::Database",
+  "title" : "private_forge",
+  "line" : 18,
+  "resource" : "3eb6808138ae93369f651d26f4cf5b6085dac23a",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : [ "Postgresql_psql[grant:database:GRANT forge - ALL - private_forge]" ],
+    "dbname" : "private_forge",
+    "istemplate" : false,
+    "owner" : "postgres",
+    "template" : "template0"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::database_grant", "server", "class", "postgresql", "producer:forge:private_forge", "database_grant", "postgresql::server::db", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/db.pp",
+  "type" : "Postgresql::Server::Database_grant",
+  "title" : "GRANT forge - ALL - private_forge",
+  "line" : 37,
+  "resource" : "3607e1ad810c3066e8bf767192260b2979d18864",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "private_forge",
+    "privilege" : "ALL",
+    "role" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/db.pp",
+  "type" : "Postgresql::Server::Db",
+  "title" : "private_forge",
+  "line" : 16,
+  "resource" : "3f44a3f9789f9322d4fb5c5578844fd04ab437a1",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "dbname" : "private_forge",
+    "grant" : "ALL",
+    "istemplate" : false,
+    "password" : "md58fa212bf1002a5c794033a5202a048e2",
+    "template" : "template0",
+    "user" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::database_grant", "server", "class", "postgresql", "grant", "producer:forge:private_forge", "database_grant", "postgresql::server::db", "private_forge", "db", "forge::db", "postgresql::server::grant", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/database_grant.pp",
+  "type" : "Postgresql::Server::Grant",
+  "title" : "database:GRANT forge - ALL - private_forge",
+  "line" : 9,
+  "resource" : "32b14347d1cf0135bf6a41a893334b2611fc562b",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "private_forge",
+    "object_name" : "private_forge",
+    "object_type" : "DATABASE",
+    "port" : 5432,
+    "privilege" : "ALL",
+    "psql_db" : "postgres",
+    "psql_user" : "postgres",
+    "role" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/db.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "allow access from forge",
+  "line" : 21,
+  "resource" : "2dee79933689940c44c1233421d9aaf7f7b7c11d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "address" : "0.0.0.0/0",
+    "auth_method" : "md5",
+    "database" : "private_forge",
+    "description" : "Open up postgresql for access",
+    "order" : "150",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "host",
+    "user" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "allow access to all users",
+  "line" : 75,
+  "resource" : "bbc269c262efd5a6bc345454e17fcb2da32741c3",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "address" : "127.0.0.1/32",
+    "auth_method" : "md5",
+    "database" : "all",
+    "description" : "none",
+    "order" : "100",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "host",
+    "user" : "all"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "allow access to ipv6 localhost",
+  "line" : 81,
+  "resource" : "c4a3f2e443d8e6a1121c9cc51cd71c9e77ec2340",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "address" : "::1/128",
+    "auth_method" : "md5",
+    "database" : "all",
+    "description" : "none",
+    "order" : "101",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "host",
+    "user" : "all"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "allow localhost TCP access to postgresql user",
+  "line" : 54,
+  "resource" : "11d18007adf5b42ea1c29353d31808860c9627fe",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "address" : "127.0.0.1/32",
+    "auth_method" : "md5",
+    "database" : "all",
+    "description" : "none",
+    "order" : "003",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "host",
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "deny access to postgresql user",
+  "line" : 61,
+  "resource" : "7887767e013cb301296b15ff5e116299b0be24d0",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "address" : "0.0.0.0/0",
+    "auth_method" : "reject",
+    "database" : "all",
+    "description" : "none",
+    "order" : "004",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "host",
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "local access as postgres user",
+  "line" : 41,
+  "resource" : "2ca11550a3118c065209e68beabf783b3c7fe107",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "auth_method" : "ident",
+    "database" : "all",
+    "description" : "none",
+    "order" : "001",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "local",
+    "user" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "pg_hba_rule", "postgresql::server::pg_hba_rule", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config.pp",
+  "type" : "Postgresql::Server::Pg_hba_rule",
+  "title" : "local access to database with same name",
+  "line" : 48,
+  "resource" : "162121c7e758f3d0a0ef1f9be7092b0fc7a7dd9e",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "auth_method" : "ident",
+    "database" : "all",
+    "description" : "none",
+    "order" : "002",
+    "target" : "/var/lib/pgsql/9.3/data/pg_hba.conf",
+    "type" : "local",
+    "user" : "all"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/db.pp",
+  "type" : "Postgresql::Server::Role",
+  "title" : "forge",
+  "line" : 30,
+  "resource" : "8f9ba98b4fa73458a555ed247240303a73cbdc01",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "username" : "forge",
+    "superuser" : false,
+    "createdb" : false,
+    "inherit" : true,
+    "port" : 5432,
+    "replication" : false,
+    "db" : "postgres",
+    "createrole" : false,
+    "password_hash" : "md58fa212bf1002a5c794033a5202a048e2",
+    "login" : true,
+    "before" : [ "Postgresql::Server::Database[private_forge]", "Postgresql_psql[grant:database:GRANT forge - ALL - private_forge]" ],
+    "connection_limit" : "-1"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "validate_service_is_running", "validate_db_connection", "producer:forge:private_forge", "postgresql::validate_db_connection", "private_forge", "db", "forge::db", "service", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/service.pp",
+  "type" : "Postgresql::Validate_db_connection",
+  "title" : "validate_service_is_running",
+  "line" : 32,
+  "resource" : "8ecc56528ca1f079b42e6db10f9f8f8a03702e7f",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : "Anchor[postgresql::server::service::end]",
+    "create_db_first" : false,
+    "database_name" : "postgres",
+    "database_port" : 5432,
+    "require" : "Service[postgresqld]",
+    "run_as" : "postgres",
+    "sleep" : 1,
+    "tries" : 60
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "postgresql_conf", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "data_directory", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config_entry.pp",
+  "type" : "Postgresql_conf",
+  "title" : "data_directory",
+  "line" : 105,
+  "resource" : "be759ebba32f4a847c87b74412b07a8f5c2f6db7",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : "Class[Postgresql::Server::Reload]",
+    "ensure" : "present",
+    "notify" : "Class[Postgresql::Server::Service]",
+    "require" : "Class[Postgresql::Server::Initdb]",
+    "target" : "/var/lib/pgsql/9.3/data/postgresql.conf",
+    "value" : "/var/lib/pgsql/9.3/data"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "postgresql_conf", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "private_forge", "db", "forge::db", "listen_addresses", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config_entry.pp",
+  "type" : "Postgresql_conf",
+  "title" : "listen_addresses",
+  "line" : 105,
+  "resource" : "554c7fa9bc3906bf34bfa96634ea72a7d360ee98",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : "Class[Postgresql::Server::Reload]",
+    "ensure" : "present",
+    "notify" : "Class[Postgresql::Server::Service]",
+    "require" : "Class[Postgresql::Server::Initdb]",
+    "target" : "/var/lib/pgsql/9.3/data/postgresql.conf",
+    "value" : "*"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server", "config", "server", "postgresql_conf", "class", "postgresql", "postgresql::server::config_entry", "config_entry", "producer:forge:private_forge", "postgresql::server::config", "port", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/config_entry.pp",
+  "type" : "Postgresql_conf",
+  "title" : "port",
+  "line" : 105,
+  "resource" : "23b130e2586ebb35989ba3929828694888acc8da",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "before" : "Class[Postgresql::Server::Reload]",
+    "ensure" : "present",
+    "notify" : "Class[Postgresql::Server::Service]",
+    "require" : "Class[Postgresql::Server::Initdb]",
+    "target" : "/var/lib/pgsql/9.3/data/postgresql.conf",
+    "value" : 5432
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" CONNECTION LIMIT -1",
+  "line" : 78,
+  "resource" : "70e35b9cd01e834052875099210f1b7b1459ab9d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolconnlimit=-1"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2'",
+  "line" : 89,
+  "resource" : "41f1e53832167efb3a8522db363958b429c93acf",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT usename FROM pg_shadow WHERE usename='forge' and passwd='md58fa212bf1002a5c794033a5202a048e2'"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" INHERIT",
+  "line" : 62,
+  "resource" : "1f132e05d15b028e6999d256d127417c916426cc",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolinherit=true"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" LOGIN",
+  "line" : 58,
+  "resource" : "ff0145a8a3448c5a42888077660779529fa7a5dc",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolcanlogin=true"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" NOCREATEDB",
+  "line" : 50,
+  "resource" : "5fdc405458347f2f0ecadec52a2f8d939b23c898",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolcreatedb=false"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" NOCREATEROLE",
+  "line" : 54,
+  "resource" : "a17175f4aadfef3dc8eb9c5932b17bb59dd0f2f8",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolcreaterole=false"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" NOREPLICATION",
+  "line" : 68,
+  "resource" : "d09b7d66c7afd2f1d7874c99ad27314e4dd89ceb",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolreplication=false"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "ALTER ROLE \"forge\" NOSUPERUSER",
+  "line" : 46,
+  "resource" : "ae27475feb4eabda732841842685fb368de8a27d",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : [ "Class[Postgresql::Server]", "Postgresql_psql[CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1]" ],
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge' and rolsuper=false"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "role", "postgresql::server::role", "server", "class", "postgresql", "producer:forge:private_forge", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/role.pp",
+  "type" : "Postgresql_psql",
+  "title" : "CREATE ROLE \"forge\" ENCRYPTED PASSWORD 'md58fa212bf1002a5c794033a5202a048e2' LOGIN NOCREATEROLE NOCREATEDB NOSUPERUSER  CONNECTION LIMIT -1",
+  "line" : 41,
+  "resource" : "5815583231d3fe181b631884548f69555bdf91cc",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : "Class[Postgresql::Server]",
+    "unless" : "SELECT rolname FROM pg_roles WHERE rolname='forge'"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "database", "postgresql::server::db", "postgresql::server::database", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/database.pp",
+  "type" : "Postgresql_psql",
+  "title" : "Check for existence of db 'private_forge'",
+  "line" : 53,
+  "resource" : "299b19a5fc432e85b9d17489acf55dcc4ad375ed",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "SELECT 1",
+    "psql_user" : "postgres",
+    "require" : "Class[Postgresql::Server::Service]",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "port" : 5432,
+    "db" : "postgres",
+    "notify" : [ "Exec[/usr/pgsql-9.3/bin/createdb --port='5432' --owner='postgres' --template=template0  'private_forge']" ],
+    "unless" : "SELECT datname FROM pg_database WHERE datname='private_forge'",
+    "psql_group" : "postgres"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "database", "postgresql::server::db", "postgresql::server::database", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/database.pp",
+  "type" : "Postgresql_psql",
+  "title" : "REVOKE CONNECT ON DATABASE \"private_forge\" FROM public",
+  "line" : 68,
+  "resource" : "6873638b87255bf9d15949a0ab5392b9afea96fb",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "refreshonly" : true
+  },
+  "exported" : false
+}, {
+  "tags" : [ "server", "class", "postgresql", "producer:forge:private_forge", "database", "postgresql::server::db", "postgresql::server::database", "postgresql_psql", "private_forge", "db", "forge::db", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/database.pp",
+  "type" : "Postgresql_psql",
+  "title" : "UPDATE pg_database SET datistemplate = false WHERE datname = 'private_forge'",
+  "line" : 75,
+  "resource" : "8414973c110f39004b0594600b5ad98505616b2b",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "unless" : "SELECT datname FROM pg_database WHERE datname = 'private_forge' AND datistemplate = false"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::server::database_grant", "server", "class", "postgresql", "grant", "producer:forge:private_forge", "database_grant", "postgresql::server::db", "postgresql_psql", "private_forge", "db", "forge::db", "postgresql::server::grant", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/grant.pp",
+  "type" : "Postgresql_psql",
+  "title" : "grant:database:GRANT forge - ALL - private_forge",
+  "line" : 119,
+  "resource" : "258208deb1fc9ab930d131961dc6e9e8abbdb242",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "command" : "GRANT ALL ON DATABASE \"private_forge\" TO\n      \"forge\"",
+    "db" : "postgres",
+    "port" : 5432,
+    "psql_group" : "postgres",
+    "psql_path" : "/usr/pgsql-9.3/bin/psql",
+    "psql_user" : "postgres",
+    "require" : "Class[Postgresql::Server]",
+    "unless" : "SELECT 1 WHERE has_database_privilege('forge',\n                  'private_forge', 'CREATE')"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresqld", "postgresql::server::service", "postgresql::server", "server", "class", "postgresql", "producer:forge:private_forge", "private_forge", "db", "forge::db", "service", "forge" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/server/service.pp",
+  "type" : "Service",
+  "title" : "postgresqld",
+  "line" : 17,
+  "resource" : "b054e29a0be470f22fcfaf29c82c468a03a3f19a",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "alias" : [ "postgresql-9.3" ],
+    "enable" : true,
+    "ensure" : "running",
+    "hasstatus" : true,
+    "name" : "postgresql-9.3"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "class", "producer:forge:private_forge", "private_forge", "db", "forge::db", "sql", "forge" ],
+  "file" : "/usr/share/puppet/modules/forge/manifests/db.pp",
+  "type" : "Sql",
+  "title" : "private_forge",
+  "line" : 7,
+  "resource" : "41dfea7b0871c3fa412219dce6f9ba24968c18e6",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "database" : "private_forge",
+    "host" : "deployer-agent-1.vm",
+    "password" : "never_forget",
+    "user" : "forge"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "stage" ],
+  "file" : null,
+  "type" : "Stage",
+  "title" : "main",
+  "line" : null,
+  "resource" : "294d41a2ccbf8965bc2284d565276041de82a590",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "name" : "main"
+  },
+  "exported" : false
+}, {
+  "tags" : [ "postgresql::repo", "postgresql::repo::yum_postgresql_org", "class", "postgresql", "yumrepo", "producer:forge:private_forge", "repo", "globals", "private_forge", "db", "forge::db", "postgresql::globals", "yum_postgresql_org", "forge", "yum.postgresql.org" ],
+  "file" : "/home/vagrant/.puppet/modules/postgresql/manifests/repo/yum_postgresql_org.pp",
+  "type" : "Yumrepo",
+  "title" : "yum.postgresql.org",
+  "line" : 20,
+  "resource" : "16dda5c9bb57ab01b560d65dfa6270a896916d14",
+  "environment" : "forge",
+  "certname" : "deployer-agent-1.vm",
+  "parameters" : {
+    "baseurl" : "http://yum.postgresql.org/9.3/redhat/rhel-$releasever-$basearch",
+    "before" : [ "Package[postgresql-client]", "Package[postgresql-server]" ],
+    "descr" : "PostgreSQL 9.3 $releasever - $basearch",
+    "enabled" : 1,
+    "gpgcheck" : 1,
+    "gpgkey" : "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG-93"
+  },
+  "exported" : false
+} ]

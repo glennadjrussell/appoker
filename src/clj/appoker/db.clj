@@ -4,6 +4,15 @@
   "Returns a sequence of applications that are currently deployed"
   ["forge"])
 
+;;
+;; /v4/environments
+;;
+;; [
+;;   { "name": "provision" },
+;;   { "name": "forge" },
+;;   { "name": "production"}
+;; ]
+;;
 (defn environments
   "Retrieve currently configured environments from puppetdb"
   []
